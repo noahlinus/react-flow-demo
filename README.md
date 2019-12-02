@@ -1,16 +1,6 @@
-## 总体架构
+## 说明
 
-基于官方`create-react-app`，并增加自选框架。
-
-类型 | 可选框架名称
-:- | :- 
-语言 | JavaScript / TypeScript
-状态管理库 | Redux / Mobx
-css预处理器 | SCSS / LESS / styled-components
-UI组件 | Antd / Ant-mobile
-代码规范 | Airbnb
-HTTP库 | Axios
-路由 | react-router
+一个由 React 创建的对话流 Demo
 
 ## 使用
 
@@ -66,10 +56,10 @@ HTTP库 | Axios
 
     serviceWorker.js -- PWA应用缓存离线策略，需要在index.js中开启
 
-> `config-overrides.js` -- 配置文件 Webpack devServer jest都在这里配置
+> `config-overrides.js` -- 配置文件 Webpack devServer jest 都在这里配置
 
-> `.babelrc` -- babel相关配置
+> `.babelrc` -- babel 相关配置
 
 ## 代码规范
 
-请遵守Airbnb JavaScript的代码规范：[Airbnb JavaScript 代码规范中文版](https://github.com/LinYouYuan/javascript-zh)
+请遵守 Airbnb JavaScript 的代码规范：[Airbnb JavaScript 代码规范中文版](https://github.com/LinYouYuan/javascript-zh)
