@@ -25,6 +25,28 @@ const buildLine = ({
   toLocation,
 })
 
+export function throttle(fun, delay) {
+  let last
+  let deferTimer
+  return e => {
+    e.preventDefault()
+    // 获取x和y
+    const nx = e.clientX
+    const ny = e.clientY
+    const now = Date.now()
+    if (last && now < last + delay) {
+      clearTimeout(deferTimer)
+      deferTimer = setTimeout(() => {
+        last = now
+        fun(nx, ny)
+      }, delay)
+    } else {
+      last = now
+      fun(nx, ny)
+    }
+  }
+}
+
 function FlowPanel({data, onSave}) {
   const flowPanelRf = useRef()
 
@@ -85,11 +107,8 @@ function FlowPanel({data, onSave}) {
   }, [nodes, edges, nodeSelectId, lineSelectId])
 
   const onMouseMove = useCallback(
-    e => {
-      e.preventDefault()
-      // 获取x和y
-      const nx = e.clientX
-      const ny = e.clientY
+    // 40毫秒的节流
+    throttle((nx, ny) => {
       // 节点变化计算
       if (matrix.nodeId) {
         // 计算移动后的左偏移量和顶部的偏移量
@@ -172,7 +191,7 @@ function FlowPanel({data, onSave}) {
         const edgesTemp = [...edges, newEdge]
         setEdges(edgesTemp)
       }
-    },
+    }, 30),
     [matrix.nodeId, branchMatrix.branchName],
   )
 

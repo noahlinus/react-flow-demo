@@ -94,8 +94,7 @@ function FlowNode({
       onClick={onOneNodeClick}
       onDoubleClick={() => onNodeDoubleClick(nodeId)}
       style={{
-        left: x,
-        top: y,
+        transform: `translate(${x}px,${y}px)`,
         cursor: moved ? 'move' : 'pointer',
         width,
       }}
