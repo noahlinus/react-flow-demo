@@ -25,11 +25,15 @@ const buildLine = ({
   toLocation,
 })
 
-export function throttle(fun, delay) {
+/** 专用函数防抖 */
+export function throttle(fun, delay, enable) {
   let last
   let deferTimer
   return e => {
     e.preventDefault()
+    if (!enable) {
+      return
+    }
     // 获取x和y
     const nx = e.clientX
     const ny = e.clientY
@@ -108,90 +112,94 @@ function FlowPanel({data, onSave}) {
 
   const onMouseMove = useCallback(
     // 40毫秒的节流
-    throttle((nx, ny) => {
-      // 节点变化计算
-      if (matrix.nodeId) {
-        // 计算移动后的左偏移量和顶部的偏移量
-        let nl = nx - (matrix.x - matrix.l)
-        let nt = ny - (matrix.y - matrix.t)
+    throttle(
+      (nx, ny) => {
+        // 节点变化计算
+        if (matrix.nodeId) {
+          // 计算移动后的左偏移量和顶部的偏移量
+          let nl = nx - (matrix.x - matrix.l)
+          let nt = ny - (matrix.y - matrix.t)
 
-        if (nl < 0) {
-          nl = 0
-        }
+          if (nl < 0) {
+            nl = 0
+          }
 
-        if (nt < 0) {
-          nt = 0
-        }
+          if (nt < 0) {
+            nt = 0
+          }
 
-        const flowPanelDom = flowPanelRf.current
+          const flowPanelDom = flowPanelRf.current
 
-        if (nl > flowPanelDom.offsetWidth - matrix.w) {
-          nl = flowPanelDom.offsetWidth - matrix.w
-        }
+          if (nl > flowPanelDom.offsetWidth - matrix.w) {
+            nl = flowPanelDom.offsetWidth - matrix.w
+          }
 
-        if (nt > flowPanelDom.offsetHeight - matrix.h) {
-          nt = flowPanelDom.offsetHeight - matrix.h
-        }
+          if (nt > flowPanelDom.offsetHeight - matrix.h) {
+            nt = flowPanelDom.offsetHeight - matrix.h
+          }
 
-        const branchMap = {}
+          const branchMap = {}
 
-        const nodesTemp = nodes.map(item => {
-          if (item.nodeId === matrix.nodeId) {
-            item.branchList.forEach(branchName => {
-              const branchDom = document.getElementById(
-                `${item.nodeId}-${branchName}`,
-              )
-              if (branchDom) {
-                branchMap[branchName] = {
-                  x: nl + branchDom.offsetLeft + branchDom.offsetWidth / 2,
-                  y: nt + branchDom.offsetTop + branchDom.offsetHeight,
+          const nodesTemp = nodes.map(item => {
+            if (item.nodeId === matrix.nodeId) {
+              item.branchList.forEach(branchName => {
+                const branchDom = document.getElementById(
+                  `${item.nodeId}-${branchName}`,
+                )
+                if (branchDom) {
+                  branchMap[branchName] = {
+                    x: nl + branchDom.offsetLeft + branchDom.offsetWidth / 2,
+                    y: nt + branchDom.offsetTop + branchDom.offsetHeight,
+                  }
                 }
-              }
-            })
-            return {...item, location: {x: nl, y: nt}}
-          } else {
-            return item
-          }
-        })
-        const edgesTemp = edges.map(item => {
-          if (matrix.nodeId === item.nodeId && branchMap[item.branchName]) {
-            return {
-              ...item,
-              fromLocation: {
-                x: branchMap[item.branchName].x,
-                y: branchMap[item.branchName].y,
-              },
+              })
+              return {...item, location: {x: nl, y: nt}}
+            } else {
+              return item
             }
-          } else if (matrix.nodeId === item.toNodeId) {
-            return {...item, toLocation: {x: nl + matrix.w / 2, y: nt - 10}}
-          } else {
-            return item
-          }
-        })
+          })
+          const edgesTemp = edges.map(item => {
+            if (matrix.nodeId === item.nodeId && branchMap[item.branchName]) {
+              return {
+                ...item,
+                fromLocation: {
+                  x: branchMap[item.branchName].x,
+                  y: branchMap[item.branchName].y,
+                },
+              }
+            } else if (matrix.nodeId === item.toNodeId) {
+              return {...item, toLocation: {x: nl + matrix.w / 2, y: nt - 10}}
+            } else {
+              return item
+            }
+          })
 
-        setNodes(nodesTemp)
+          setNodes(nodesTemp)
 
-        setEdges(edgesTemp)
-        return
-      }
+          setEdges(edgesTemp)
+          return
+        }
 
-      // 分支线变化计算
-      if (branchMatrix.branchName) {
-        const nl = nx - (branchMatrix.x - branchMatrix.l)
-        const nt = ny - (branchMatrix.y - branchMatrix.t)
-        const newEdge = buildLine({
-          nodeId: branchMatrix.nodeId,
-          branchName: branchMatrix.branchName,
-          fromLocation: {
-            x: branchMatrix.l + branchMatrix.w / 2,
-            y: branchMatrix.t + branchMatrix.h,
-          },
-          toLocation: {x: nl + branchMatrix.ox, y: nt + branchMatrix.oy - 12},
-        })
-        const edgesTemp = [...edges, newEdge]
-        setEdges(edgesTemp)
-      }
-    }, 30),
+        // 分支线变化计算
+        if (branchMatrix.branchName) {
+          const nl = nx - (branchMatrix.x - branchMatrix.l)
+          const nt = ny - (branchMatrix.y - branchMatrix.t)
+          const newEdge = buildLine({
+            nodeId: branchMatrix.nodeId,
+            branchName: branchMatrix.branchName,
+            fromLocation: {
+              x: branchMatrix.l + branchMatrix.w / 2,
+              y: branchMatrix.t + branchMatrix.h,
+            },
+            toLocation: {x: nl + branchMatrix.ox, y: nt + branchMatrix.oy - 12},
+          })
+          const edgesTemp = [...edges, newEdge]
+          setEdges(edgesTemp)
+        }
+      },
+      23,
+      matrix.nodeId || branchMatrix.branchName,
+    ),
     [matrix.nodeId, branchMatrix.branchName],
   )
 
