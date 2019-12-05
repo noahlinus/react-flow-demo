@@ -1,0 +1,419 @@
+{
+  "data": {
+    "nodes": [
+      {
+        "parent": "NORMAL_NODE_node_CQA6CZ7T2DA",
+        "shape": "flowNode",
+        "x": 638.0,
+        "y": 405.0,
+        "index": 10.0,
+        "id": "NORMAL_NODE_branch_5FRH0A60MD",
+        "text": "肯定"
+      },
+      {
+        "parent": "NORMAL_NODE_node_CQA6CZ7T2DA",
+        "shape": "flowNode",
+        "x": 676.0,
+        "y": 405.0,
+        "index": 11.0,
+        "id": "NORMAL_NODE_branch_QMT6ABW788",
+        "text": "默认"
+      },
+      {
+        "parent": "390aa39e748c40b4a63bea08b3e4ca21_NORMAL_NODE_node_3DFQBDK7KXH",
+        "shape": "flowNode",
+        "x": 524.0,
+        "y": 134.0,
+        "index": 13.0,
+        "id": "NORMAL_NODE_branch_FMK0B1XT2ZU",
+        "text": "不需要"
+      },
+      {
+        "parent": "390aa39e748c40b4a63bea08b3e4ca21_NORMAL_NODE_node_3DFQBDK7KXH",
+        "shape": "flowNode",
+        "x": 574.0,
+        "y": 134.0,
+        "index": 14.0,
+        "id": "NORMAL_NODE_branch_94SRYDJ0QX",
+        "text": "特殊"
+      },
+      {
+        "parent": "390aa39e748c40b4a63bea08b3e4ca21_NORMAL_NODE_node_3DFQBDK7KXH",
+        "shape": "flowNode",
+        "x": 612.0,
+        "y": 134.0,
+        "index": 15.0,
+        "id": "NORMAL_NODE_branch_T4QL62J6GGE",
+        "text": "买好了"
+      },
+      {
+        "parent": "390aa39e748c40b4a63bea08b3e4ca21_NORMAL_NODE_node_3DFQBDK7KXH",
+        "shape": "flowNode",
+        "x": 662.0,
+        "y": 134.0,
+        "index": 16.0,
+        "id": "NORMAL_NODE_branch_TC0TGRZ75VO",
+        "text": "没买"
+      },
+      {
+        "parent": "NORMAL_NODE_node_CQA6CZ7T2DA",
+        "shape": "flowNode",
+        "x": 714.0,
+        "y": 405.0,
+        "index": 17.0,
+        "id": "NORMAL_NODE_branch_JOSF9PHL04G",
+        "text": "拒绝"
+      },
+      {
+        "parent": "NORMAL_NODE_node_GKSYGAF0K4",
+        "shape": "flowNode",
+        "x": 384.0,
+        "y": 403.0,
+        "index": 18.0,
+        "id": "NORMAL_NODE_branch_803OE0HJ0ZW",
+        "text": "拒绝"
+      },
+      {
+        "parent": "NORMAL_NODE_node_GKSYGAF0K4",
+        "shape": "flowNode",
+        "x": 422.0,
+        "y": 403.0,
+        "index": 19.0,
+        "id": "NORMAL_NODE_branch_6AB7XL8ZQ83",
+        "text": "买好了"
+      },
+      {
+        "parent": "NORMAL_NODE_node_GKSYGAF0K4",
+        "shape": "flowNode",
+        "x": 472.0,
+        "y": 403.0,
+        "index": 20.0,
+        "id": "NORMAL_NODE_branch_J6PDXQBGA4",
+        "text": "没买"
+      },
+      {
+        "parent": "NORMAL_NODE_node_632UWV7V5IM",
+        "shape": "flowNode",
+        "x": 23.0,
+        "y": 665.0,
+        "index": 31.0,
+        "id": "undefined_BRANCHICROOJ9H",
+        "text": "全部"
+      },
+      {
+        "parent": "390aa39e748c40b4a63bea08b3e4ca21_NORMAL_NODE_node_3DFQBDK7KXH",
+        "shape": "flowNode",
+        "x": 700.0,
+        "y": 134.0,
+        "index": 33.0,
+        "id": "390aa39e748c40b4a63bea08b3e4ca21_BRANCHFICJ10FS",
+        "text": "默认"
+      }
+    ],
+    "edges": [
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "size": 1.0,
+        "index": 21.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_FMK0B1XT2ZU",
+        "id": "42277529",
+        "target": "NORMAL_NODE_node_GKSYGAF0K4"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "size": 1.0,
+        "index": 22.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_94SRYDJ0QX",
+        "id": "79fb631b",
+        "target": "NORMAL_NODE_node_CQA6CZ7T2DA"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "size": 1.0,
+        "index": 23.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_T4QL62J6GGE",
+        "id": "01a012d7",
+        "target": "JUMP_NODE_node_ZPE83I1O72"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "size": 1.0,
+        "index": 24.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_TC0TGRZ75VO",
+        "id": "9c782978",
+        "target": "390aa39e748c40b4a63bea08b3e4ca21_JUMP_NODE_node_4V56YNTOZWG"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "size": 1.0,
+        "index": 25.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_JOSF9PHL04G",
+        "id": "ac950647",
+        "target": "JUMP_NODE_node_IER7FX33YD"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "index": 26.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_5FRH0A60MD",
+        "id": "f14b565f",
+        "target": "JUMP_NODE_node_NAXFKL3BNBA"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "index": 27.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_QMT6ABW788",
+        "id": "d4b9693f",
+        "target": "JUMP_NODE_node_NAXFKL3BNBA"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "index": 28.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_803OE0HJ0ZW",
+        "id": "21487404",
+        "target": "NORMAL_NODE_node_632UWV7V5IM"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "index": 29.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_6AB7XL8ZQ83",
+        "id": "635ad4c1",
+        "target": "JUMP_NODE_node_PRA0YWVM2SJ"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "index": 30.0,
+        "style": {"endArrow": true},
+        "source": "NORMAL_NODE_branch_J6PDXQBGA4",
+        "id": "d7c698ba",
+        "target": "JUMP_NODE_node_TOJH19DBPG"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "size": 1.0,
+        "index": 32.0,
+        "style": {"endArrow": true},
+        "source": "undefined_BRANCHICROOJ9H",
+        "id": "d2b9907d",
+        "target": "JUMP_NODE_node_7N7DFGOY6MG"
+      },
+      {
+        "shape": "smoothLine",
+        "color": "#567bff",
+        "size": 1.0,
+        "index": 34.0,
+        "style": {"endArrow": true},
+        "source": "390aa39e748c40b4a63bea08b3e4ca21_BRANCHFICJ10FS",
+        "id": "068e7350",
+        "target": "NORMAL_NODE_node_GKSYGAF0K4"
+      }
+    ],
+    "groups": [
+      {
+        "nodeName": "1-1开场白",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "0",
+        "branches": ["不需要", "特殊", "买好了", "没买", "默认"],
+        "nodeType": "NORMAL_NODE",
+        "root": true,
+        "x": 514.0,
+        "y": 16.0,
+        "id": "390aa39e748c40b4a63bea08b3e4ca21_NORMAL_NODE_node_3DFQBDK7KXH",
+        "flowId": "390aa39e748c40b4a63bea08b3e4ca21",
+        "nodeRepeatCount": 1.0,
+        "robotTextList": [
+          "喂，您好，（停顿2S），您好这里是绍兴福通客户回访中心，本次来电，主要是想跟您确认一下：您的爱车已经买好了吗？",
+          "嗯，您好，这里是绍兴福通客户回访中心，请问您的爱车已经买好了吗？"
+        ]
+      },
+      {
+        "nodeName": "跳转节点",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "1",
+        "nodeType": "JUMP_NODE",
+        "normalTagList": "车辆状态：未购车",
+        "root": false,
+        "x": 1280.0,
+        "action": {"actionType": "NEXT_MAIN_FLOW"},
+        "y": 285.0,
+        "id": "390aa39e748c40b4a63bea08b3e4ca21_JUMP_NODE_node_4V56YNTOZWG",
+        "flowId": "390aa39e748c40b4a63bea08b3e4ca21",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": [""]
+      },
+      {
+        "nodeName": "1-3结束2",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "2",
+        "nodeType": "JUMP_NODE",
+        "intentionTag": "C",
+        "root": false,
+        "x": 117.0,
+        "action": {"actionType": "HANGUP"},
+        "y": 807.0,
+        "id": "JUMP_NODE_node_7N7DFGOY6MG",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": ["好的，您有需要随时联系，祝您生活愉快，再见！"]
+      },
+      {
+        "nodeName": "跳转节点",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "3",
+        "nodeType": "JUMP_NODE",
+        "root": false,
+        "x": 656.0,
+        "action": {
+          "actionType": "NEXT_MAIN_FLOW",
+          "mainFlowName": "执行下一步",
+          "mainFlowId": ""
+        },
+        "y": 655.0,
+        "id": "JUMP_NODE_node_TOJH19DBPG",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": []
+      },
+      {
+        "nodeName": "1-2结束1",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "4",
+        "nodeType": "JUMP_NODE",
+        "normalTagList": "车辆状态：已购车",
+        "intentionTag": "C",
+        "root": false,
+        "x": 338.0,
+        "action": {"actionType": "HANGUP"},
+        "y": 510.0,
+        "id": "JUMP_NODE_node_PRA0YWVM2SJ",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": [
+          "哦，已经买好了，那恭喜您，如果以后您家人或者朋友想要购车也可以联系我们，这边就祝您用车愉快，打扰您了，再见！"
+        ]
+      },
+      {
+        "nodeName": "1-5挽回",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "5",
+        "branches": ["全部"],
+        "nodeType": "NORMAL_NODE",
+        "root": false,
+        "x": 13.0,
+        "y": 529.0,
+        "id": "NORMAL_NODE_node_632UWV7V5IM",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": [
+          "这两周我们经销商会举办一场大型的团购活动，可以根据您的情况提供不同的优惠服务，车型也是最充足的。不然您再考虑下？"
+        ]
+      },
+      {
+        "nodeName": "1-3结束2",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "6",
+        "nodeType": "JUMP_NODE",
+        "intentionTag": "C",
+        "root": false,
+        "x": 1045.0,
+        "action": {"actionType": "HANGUP"},
+        "y": 572.0,
+        "id": "JUMP_NODE_node_IER7FX33YD",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": ["好的，您有需要随时联系，祝您生活愉快，再见！"]
+      },
+      {
+        "nodeName": "跳转节点",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "7",
+        "nodeType": "JUMP_NODE",
+        "root": false,
+        "x": 829.0,
+        "action": {
+          "actionType": "NEXT_MAIN_FLOW",
+          "mainFlowName": "执行下一步",
+          "mainFlowId": ""
+        },
+        "y": 606.0,
+        "id": "JUMP_NODE_node_NAXFKL3BNBA",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": []
+      },
+      {
+        "nodeName": "1-4咨询",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "8",
+        "branches": ["拒绝", "买好了", "没买"],
+        "nodeType": "NORMAL_NODE",
+        "root": false,
+        "x": 374.0,
+        "y": 285.0,
+        "id": "NORMAL_NODE_node_GKSYGAF0K4",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": [
+          "是这样的，我这里是绍兴福特店的，本次来电，主要是想跟您确认一下：您的爱车已经买好了吗？"
+        ]
+      },
+      {
+        "nodeName": "1-5挽回",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "9",
+        "branches": ["肯定", "默认", "拒绝"],
+        "nodeType": "NORMAL_NODE",
+        "root": false,
+        "x": 628.0,
+        "y": 269.0,
+        "id": "NORMAL_NODE_node_CQA6CZ7T2DA",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": [
+          "这两周我们经销商会举办一场大型的团购活动，可以根据您的情况提供不同的优惠服务，车型也是最充足的。不然您再考虑下？"
+        ]
+      },
+      {
+        "nodeName": "1-2结束1",
+        "shape": "flowGroup",
+        "acceptBreak": false,
+        "index": "12",
+        "nodeType": "JUMP_NODE",
+        "normalTagList": "车辆状态：已购车",
+        "intentionTag": "C",
+        "root": false,
+        "x": 1008.0,
+        "action": {"actionType": "HANGUP"},
+        "y": 298.0,
+        "id": "JUMP_NODE_node_ZPE83I1O72",
+        "nodeRepeatCount": 0.0,
+        "robotTextList": [
+          "哦，已经买好了，那恭喜您，如果以后您家人或者朋友想要购车也可以联系我们，这边就祝您用车愉快，打扰您了，再见！"
+        ]
+      }
+    ]
+  },
+  "msg": "成功",
+  "success": true
+}
