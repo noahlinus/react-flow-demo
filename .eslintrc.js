@@ -60,7 +60,9 @@ module.exports = {
     'function-paren-newline': [0],
     'no-restricted-globals': [0],
     'require-yield': [1],
-    "react/sort-comp": [0]
+    'react/sort-comp': [0],
+    'state-in-constructor': [0],
+    'react/destructuring-assignment': [0],
   },
   parserOptions: {
     ecmaFeatures: {
